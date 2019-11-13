@@ -1,30 +1,42 @@
-console.log(1 + 5);
+//console.log(1 + 5);
 
 /*********
  * Data
  *********/
 
-// Variables
 
-var dog = "Agnes"; // Data Declaration
+
+var dog = {
+    age: 10,
+    dailyLog: []
+    }; // Data Declaration
+
+//dot notation
+dog.name = "Agnes";
+
+console.log(dog);
+
+dog.dailyLog.push("Intro:" + dog.name);
+
+
 var dog2 = "Athena";// Data Declaration
-var dog3 ="Mona Lisa";// Data Declaration
+
+//console.log(dog2);
+
 
 /***********
  * Actions
  **********/
 
-console.log(dog); // Action Call
 
-// keyword identifier (parameters) {//body}
-
-function bark(dog){ // Action Declaration
+function bark(name){ // Action Declaration
     //Declaration
-    console.log(dog + " Woof Woof" );
+    console.log(name + " Woof Woof" );
 }
 
-//bark(dog2); //Action Call
-bark(dog); // Action Call
+bark(dog.name); //Action Call
+dog.dailyLog.push("Barked");
+//bark(dog); // Action Call
 // bark(dog3); //Action Call
 
 
@@ -32,23 +44,54 @@ bark(dog); // Action Call
  *
  * Objects
  * Collections of related Actions and Data
+ *
+ * create->  var objName= {} | objName.[someKey] = value | function  | obj.[anotherKey] = function
+ * access -> objName.someKey | objName.anotherKey
  ***/
 
-// var pet = {
-//     type: "Dog",
-//     name: "Bruce" // properties / data
-// };
-//
-//
-// pet.walk = function() {
-//     console.log(this.name + " Walking");
-// } //Method actions
-//
-// bark(pet);
-//
-//
-// pet.walk();
-//
-//
-// console.log(dog.length);
-// console.log(dog.charAt(4));
+
+
+var pet = {
+    type: "Cat",
+    name: "Scruff" // properties / data
+};
+
+
+
+pet.bark = function bark(){ //method / actions /
+
+    if(this.type.charAt(0) === 'D'){
+        console.log(this.type.charAt(0) === 'D');
+        console.log(this.name + " Woof Woof");
+    }else {
+        console.log("Sorry I'm a " + this.type );
+    }
+
+};
+
+pet.bark();
+
+//console.log("Hello World");
+
+
+/********
+ *
+ * Almost everything in JavaScript is a Object
+ *
+ * *************/
+
+var dogsColors =  ["Grey","Blue", "Black"]; //zero base index
+
+dog.color = dogsColors[2];
+pet.color = dogsColors[0];
+console.log(dog);
+console.log(pet);
+
+
+var arr1 = [];
+
+arr1.somePropLikeAnObj = "Blah";
+
+
+
+
